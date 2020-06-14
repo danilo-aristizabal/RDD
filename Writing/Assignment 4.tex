@@ -1,0 +1,83 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{times}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[spanish]{babel}
+\usepackage{bbm}
+\usepackage{pdfpages}
+\setlength{\parindent}{0cm} % Indent
+\usepackage{geometry}[margins = 1in]
+\geometry{letterpaper, top=20mm,bottom=20mm, left=25mm, right=25mm}
+\newcommand \itsubsection{\titleformat{\subsection} {\normalfont \itshape}{\thesubsection}{1 em}{}}
+\usepackage{natbib}
+\usepackage{apalike}
+
+% Gráficos en vez de Figura 
+\usepackage{float} %Images float exactly where the code is
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{newfloat}
+\usepackage{graphicx} % Required for including pictures
+\DeclareFloatingEnvironment[name=Gráfico]{graph}
+\captionsetup[graph]{labelfont=bf, labelsep=newline}
+\setcounter{secnumdepth}{0} % quitar la númeración de las secciones
+
+% tabs caption 
+\usepackage{threeparttable}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{booktabs}
+\captionsetup[table]{labelfont=bf, labelsep=newline}
+\addto\captionsspanish{
+\def\tablename{Tabla}
+\def\listtablename{\'Indice de tablas}
+}
+
+% Defines columns for tables
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\renewcommand{\baselinestretch}{1.2}
+
+
+\title{Assignment 4 \\ Causal Inference }
+\author{}
+\date{}
+\setcounter{secnumdepth}{0}
+\begin{document}
+\maketitle
+
+\section{1}\textbf{Sean $ x_{1},\ x_{2} $ variables continuas y $ d_{1} $ una variable dummy.} 
+
+		\begin{enumerate}[label=\alph*]
+			
+			
+			\item.\textbf{En el modelo probit:}
+			\begin{equation*}
+			P\left(y=1\mid x_{1},x_{2}\right)=\Phi\left(\delta x_{1} + \gamma_{1} x_{2} + \gamma_{2} x^{2}_{2} + \gamma_{3} d_{1} + \gamma_{4} x_{2} d_{1} \right)
+			\end{equation*}
+			\textbf{Encuentre el efecto marginal de $ x_{2} $ y $ d_{1} $ en la probabilidad de respuesta. ¿Como se estimarían estos efectos?} 
+			
+			
+			\item.\textbf{En el modelo probit:}
+			\begin{equation*}
+			P\left(y=1\mid x_{1},x_{2},q\right)=\Phi\left(\delta x_{1} + \gamma_{1} x_{2} q \right)
+			\end{equation*}
+			\textbf{Donde $ q $ es una variable no observadaindependiente de $ x_{1} $ y $ x_{2} $, y que se distribuye Normal(0,1). Encuentre el efecto marginal de $ x_{2} $ en la probabilidad de respuesta, esto es $ \dfrac{\delta P(y=1 \mid x_{1},x_{2},q)}{\delta x_{2}} $, ¿Cómo se estimaría este efecto parcial?}
+			
+			\item\textbf{ Basado en el modelo del literal anterior muestre que: }
+			\begin{equation*}
+			P\left(y=1\mid x_{1},x_{2}\right)=\Phi\left[\dfrac{\delta x_{i}}{\left(1+\gamma^{2}_{1}x^{2}_{2}\right)^{1/2}}\right]
+			\end{equation*}
+			
+			\item. \textbf{Defina $ \rho_{1}=\gamma^{2}_{1} $. Pruebe la hipótesis $ H_{0}:\rho_{1}=0 $}
+		\end{enumerate}
+	
+
+
+\end{document}
+
+%%%
